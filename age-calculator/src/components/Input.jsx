@@ -1,7 +1,7 @@
-export default function Input (){
+export default function Input (props){
     return(
         <div className="grid justify-center">
-            <label className="mr-16 text-sm mb-1 font-semibold text-slate-500">DAY</label>
+            <label className="text-xs  mb-1 ml-1 font-semibold text-slate-500">{props.data}</label>
             <input 
             type="number"
             placeholder="5"
