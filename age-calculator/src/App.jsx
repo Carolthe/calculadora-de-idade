@@ -9,12 +9,11 @@ function App() {
   const [years, setYears] = useState ("0")
 
   function ageYears (){
-    const ateste = years
-    const bteste = 2024
-    const result = ateste - bteste
-
-
+   let years = ""
+   let ano = 2024
+   let result = ano - years
    setYears(result)
+   
   }
 
   return (
