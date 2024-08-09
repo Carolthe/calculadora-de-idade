@@ -6,27 +6,30 @@ import Paragrafo from './Paragrafo'
 
 function App() {
 
-  const [years, setYears] = useState ("0")
+  const [years, setYears] = useState("0")
+  const [month, setMonth] = useState("0")
+  const [day, setDay] = useState("0")
 
   function ageYears (){
    let years = ""
    let ano = 2024
    let result = ano - years
    setYears(result)
-   
   }
 
   return (
-
     <div className='bg-white h-[480px] w-11/12  sm:my-[150px] sm:w-[650px]  mx-4 mt-24 p-10 rounded-t-3xl rounded-bl-3xl rounded-br-[110px] justify-center grid '>
    <div className='flex gap-3'>
-    <Input data="DAY"/>
-    <Input data="MONTH"/>
+    <Input data="DAY"
+    value={day}
+    onChange={(ev)=> setDay(ev.target.value)}/>
+    <Input data="MONTH"
+    value={month}
+    onChange={(ev)=> setMonth(ev.target.value) }
+      />
     <Input data="YEAR"
     value={years} 
-   placeholder
    onChange={(ev)=> setYears(ev.target.value)}
-    
     />
     
    </div>
@@ -38,8 +41,8 @@ function App() {
    <img className='' src={Seta} /> 
    </button>
    <Paragrafo age={years} idade="years"  />
-   <Paragrafo age="3" idade="months" />
-   <Paragrafo age="2" idade="days"
+   <Paragrafo age={month} idade="months" />
+   <Paragrafo age={day} idade="days"
 
    />
   </div> 
