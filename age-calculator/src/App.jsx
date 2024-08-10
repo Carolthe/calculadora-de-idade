@@ -10,11 +10,15 @@ function App() {
   const [month, setMonth] = useState("0")
   const [day, setDay] = useState("0")
 
-  function ageYears (){
-   let years = ""
-   let ano = 2024
-   let result = ano - years
-   setYears(result)
+  function calcularIdade(dataNascimento) {
+    const hoje = new Date();
+    const nascimento = new Date(dataNascimento);
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+    const mes = hoje.getMonth() - nascimento.getMonth();
+    if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+      idade--;
+    }
+    return idade;
   }
 
   return (
@@ -37,7 +41,7 @@ function App() {
     
     <hr className=''></hr>
     <button
-    onClick={ageYears} className='w-14 h-14 bg-violet-800 rounded-full ml-24 mb-3'>
+    onClick={calcularIdade} className='w-14 h-14 bg-violet-800 rounded-full ml-24 mb-3'>
    <img className='' src={Seta} /> 
    </button>
    <Paragrafo age={years} idade="years"  />
