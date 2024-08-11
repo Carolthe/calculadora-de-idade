@@ -10,9 +10,9 @@ function App() {
   const [month, setMonth] = useState("0")
   const [day, setDay] = useState("0")
 
-  function calcularIdade(dataNascimento) {
+  function calcularIdade(years, month, day) {
     const hoje = new Date();
-    const nascimento = new Date(dataNascimento);
+    const nascimento = new Date(years, month, day);
     let idade = hoje.getFullYear() - nascimento.getFullYear();
     const mes = hoje.getMonth() - nascimento.getMonth();
     if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <div className='bg-white h-[480px] w-11/12  sm:my-[150px] sm:w-[650px]  mx-4 mt-24 p-10 rounded-t-3xl rounded-bl-3xl rounded-br-[110px] justify-center grid '>
+    <div className= 'items-center bg-white h-[480px] w-11/12  sm:my-[150px] sm:w-[650px]  mx-4 mt-24 p-10 rounded-t-3xl rounded-bl-3xl rounded-br-[110px] justify-center grid '>
    <div className='flex gap-3'>
     <Input data="DAY"
     value={day}
